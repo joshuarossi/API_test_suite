@@ -19,6 +19,7 @@
           },
           body: payload
         };
+        // validate each address (correct format/starting number)
         it(currency + " " + wallet + " returns status code 200", function(done) {
           baseRequest.post(options, function(error, response, body) {
             expect(response.statusCode).to.equal(200)

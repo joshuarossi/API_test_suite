@@ -1,6 +1,6 @@
 "use strict"
 
-const expect = require("chai").expect;
+const expect = require("chai").expect
 const request = require("request")
 const crypto = require("crypto")
 const api_key = "xUM2FYfvWLetwpV00XbPiieVLb959YiziRMWElxFZuf"

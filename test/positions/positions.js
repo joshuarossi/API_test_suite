@@ -16,7 +16,6 @@
     var result = null
     it("Returns status code 200", function(done) {
       baseRequest.post(options, function(error, response, body) {
-        console.log(body)
         result = body
         if (error) {
           done(body)

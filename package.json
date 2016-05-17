@@ -1,0 +1,24 @@
+{
+  "name": "api_test_suite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuarossi/API_test_suite.git"
+  },
+  "author": "Josh Rossi <josh@bitfinex.com> (https://www.bitfinex.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuarossi/API_test_suite/issues"
+  },
+  "homepage": "https://github.com/joshuarossi/API_test_suite#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "request": "^2.72.0"
+  }
+}

@@ -1,7 +1,7 @@
 describe("/account_infos", function() {
   var payload = {
     "request": "/v1/account_infos",
-    "nonce": Date.now().toString()
+    "nonce": nonce.generate()
   }
   payload = new Buffer(JSON.stringify(payload)).toString('base64');
   var signature = crypto.createHmac("sha384", api_secret).update(payload).digest('hex');

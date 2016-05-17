@@ -3,6 +3,8 @@
 const expect = require("chai").expect;
 const request = require("request")
 const crypto = require("crypto")
+const api_key = "xUM2FYfvWLetwpV00XbPiieVLb959YiziRMWElxFZuf"
+const api_secret = "yvFXPtvllYxHgaxZ1L7TxMDMGGXothQexaDVup0C0QF"
 
 //Base Request shared among all requests
 const baseRequest = request.defaults({
@@ -12,9 +14,29 @@ const baseRequest = request.defaults({
   baseUrl: "https://api.bitfinex.com/v1"
 })
 
+var nonce = new(function() {
+
+  this.generate = function() {
+
+    var now = Date.now();
+
+    this.counter = (now === this.last ? this.counter + 1 : 0);
+    this.last = now;
+
+    // add padding to nonce
+    var padding =
+      this.counter < 10 ? '000' :
+      this.counter < 100 ? '00' :
+      this.counter < 1000 ? '0' : '';
+
+    return (now + padding + this.counter).toString();
+  };
+})();
+
+global.nonce = nonce
 global.baseRequest = baseRequest
 global.expect = expect
 global.crypto = crypto
 global.request = request
-global.api_key = "EWf3KhJX8r7AkpVkVOjkvykgp8aw9i8J2ck0pUtu6oB"
-global.api_secret = "asGScJj5zHNb6UvlRxBPCe7sFbohf5nrBBuPpi5ic9R"
+global.api_key = api_key
+global.api_secret = api_secret
